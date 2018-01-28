@@ -32,7 +32,7 @@ export class HomePage {
         width: width,
         height: height,
         camera: 'rear',
-        tapPhoto: true,
+        tapPhoto: false,
         previewDrag: false,
         toBack: false,
         alpha: 1

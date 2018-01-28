@@ -11,8 +11,7 @@ declare const resolveLocalFileSystemURL: any;
 export class DetectorService {
 
   storageDirectory: string = '';
-   url:string = 'http://watcher.life/rest/api/detection';
-  // url:string = 'http://192.168.1.106:8080/rest/api/detection';
+  url:string = 'http://192.168.1.106:8080/rest/api/detection';
 
   constructor(private http:Http, public platform: Platform, private file: File) {
     if (this.platform.is('ios')) {
