@@ -75,17 +75,21 @@ export class HomePage {
       // alert("American Black Bear : " + result.results[0].predictions[0].labels["American Black Bear"])
       var value;
       var showvalue = JSON.stringify(result.results[0].predictions[0].labels);
-      value = result.results[0].predictions[0].labels;
-      for (var key in value) {
-        console.log("key value", key, value[key]);
-        if(parseFloat(value[key]) > parseFloat("0.5")) {
-          // console.log(parseFloat(value[key]))
-          // console.log(value[key]);
-          // notify.notify_warning(value);
-          alert(showvalue);
-          break;
-        }
+      value = result.images[0].classifiers[0].classes[0].score;
+      if(value > parseFloat("0.4")) {
+         alert(showvalue);
       }
+      // value = result.results[0].predictions[0].labels;
+      // for (var key in value) {
+      //   console.log("key value", key, value[key]);
+      //   if(parseFloat(value[key]) > parseFloat("0.5")) {
+      //     // console.log(parseFloat(value[key]))
+      //     // console.log(value[key]);
+      //     // notify.notify_warning(value);
+      //     alert(showvalue);
+      //     break;
+      //   }
+      // }
 
     };
 
