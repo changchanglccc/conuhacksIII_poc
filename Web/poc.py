@@ -369,7 +369,7 @@ def detector():
         # get a classifier
         visual_recognition = VisualRecognitionV3(
             '2016-05-20',
-            api_key='7e6e8982b7d6857732e15f7625c296035191d8d7'
+            api_key='d5c732f1c9bbb216a15b50b381dfe0dd7333c503'
         )
         # classifier = visual_recognition.get_classifier(
         #     classifier_id='elderlyFallPain_700377303')
@@ -379,7 +379,7 @@ def detector():
             classes = visual_recognition.classify(
                 images_file,
                 parameters=json.dumps({
-                    'classifier_ids': ['elderlyFallPain_700377303', 'default'],
+                    'classifier_ids': ['elderlyFallPain_626223167', 'default'],
                     'threshold': 0.2
                 }))
         result = json.dumps(classes, indent=2)
