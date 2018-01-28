@@ -5,12 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { CameraPreview} from '@ionic-native/camera-preview';
 import { HttpModule } from '@angular/http';
+import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { DetectorService } from "../services/rest/detectorService";
-import { File } from '@ionic-native/file';
+import { DetectorService } from "../services/rest/DetectorService";
+import { NotificationService } from "../services/device/NotificationService"
 
 @NgModule({
   declarations: [
@@ -28,12 +30,13 @@ import { File } from '@ionic-native/file';
     HomePage
   ],
   providers: [
+    File,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CameraPreview,
     DetectorService,
-    File
+    NotificationService
   ]
 })
 export class AppModule {}
