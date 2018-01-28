@@ -388,7 +388,7 @@ def detector():
         print(value)
         ##############################
         # value = classification_result['results'][0]['predictions'][0]['labels'][keyword]
-        if value > 0.4:
+        if value > 0.5:
             new_fullname = base_folder + alert_filename
             os.renames(fullname, new_fullname)
             fullname = new_fullname

@@ -11,7 +11,7 @@ declare const resolveLocalFileSystemURL: any;
 export class DetectorService {
 
   storageDirectory: string = '';
-  url:string = 'http://localhost:8080/rest/api/detection';
+  url:string = 'http://ec2-18-217-218-155.us-east-2.compute.amazonaws.com/rest/api/detection';
 
   constructor(private http:Http, public platform: Platform, private file: File) {
     if (this.platform.is('ios')) {

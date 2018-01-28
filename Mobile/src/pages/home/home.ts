@@ -76,7 +76,7 @@ export class HomePage {
       var value;
       var showvalue = JSON.stringify(result.results[0].predictions[0].labels);
       value = result.images[0].classifiers[0].classes[0].score;
-      if(value > parseFloat("0.4")) {
+      if(value > parseFloat("0.5")) {
          alert(showvalue);
       }
       // value = result.results[0].predictions[0].labels;
