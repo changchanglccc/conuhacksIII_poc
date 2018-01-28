@@ -179,7 +179,7 @@ def list_all_cameras(user_id):
     if result:
         for c in result:
             name = ""#get_detector_name(user_id, c['detector_id'])
-            c_list.append({'camera_id': c['camera_id'], 'detector_id': c['detector_id'], 'detector_name': name})
+            c_list.append({'camera_id': c['camera_id'], 'detector_id': c['detector_id'], 'classifier_name': name})
         return c_list
     return 'Error: no camera found'
 # Bind the detector to a user
