@@ -1,21 +1,22 @@
 import json
 from watson_developer_cloud import VisualRecognitionV3
 
-# reference https://www.ibm.com/watson/developercloud/visual-recognition/api/v3
-# visual_recognition = VisualRecognitionV3(
-#     '2016-05-20',
-#     api_key='7e6e8982b7d6857732e15f7625c296035191d8d7'
-# )
 
-# Test a image with already trained classifier
-# with open('C:/Users/kaich/Desktop/a.jpg', 'rb') as images_file:
-#     classes = visual_recognition.classify(
-#         images_file,
-#         parameters=json.dumps({
-#             'classifier_ids': ['elderlyFallPain_700377303','default'],
-#             'threshold': 0.6
-#         }))
-# print(json.dumps(classes, indent=2))
+# reference https://www.ibm.com/watson/developercloud/visual-recognition/api/v3
+visual_recognition = VisualRecognitionV3(
+    '2016-05-20',
+    api_key='7e6e8982b7d6857732e15f7625c296035191d8d7'
+)
+
+# Test a image with already trained classifier_id
+with open('/Users/chongli/Desktop/a.jpeg', 'rb') as images_file:
+    classes = visual_recognition.classify(
+        images_file,
+        parameters=json.dumps({
+            'classifier_ids': ['elderlyFallPain_700377303','default'],
+            'threshold': 0.2
+        }))
+print(json.dumps(classes, indent=2))
 
 # Creat a new classifier
 # with open('./beagle.zip', 'rb') as beagle, open(

@@ -111,20 +111,21 @@ def bind_detector_user(user_id, detector_name, detector_id):
 
 # get a classifier
 visual_recognition = VisualRecognitionV3(
-    '2018-01-27',
-    api_key='{7e6e8982b7d6857732e15f7625c296035191d8d7}'
+    '2016-05-20',
+    api_key='7e6e8982b7d6857732e15f7625c296035191d8d7'
 )
-classifier = visual_recognition.get_classifier(
-    classifier_id='elderlyFallPain_700377303')
-print(json.dumps(classifier, indent=2))
-# with open('./fruitbowl.jpg', 'rb') as images_file:
-#     classes = visual_recognition.classify(
-#         images_file,
-#         parameters=json.dumps({
-#             'classifier_ids': ['fruits_1462128776','SatelliteModel_6242312846'],
-#             'threshold': 0.6
-#         }))
-# print(json.dumps(classes, indent=2))
+# classifier = visual_recognition.get_classifier(
+#     classifier_id='elderlyFallPain_700377303')
+# print(json.dumps(classifier, indent=2))
+
+with open('/Users/chongli/Desktop/a.jpeg', 'rb') as images_file:
+    classes = visual_recognition.classify(
+        images_file,
+        parameters=json.dumps({
+            'classifier_ids': ['elderlyFallPain_700377303', 'default'],
+            'threshold': 0.2
+        }))
+print(json.dumps(classes, indent=2))
 
 ##############################
 
@@ -246,5 +247,5 @@ def check():
 #############################
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, threaded=True)
-# host='0.0.0.0', port='80',
+    app.run(host='0.0.0.0', port=9056, threaded=True)
+# # host='0.0.0.0', port='80',
