@@ -54,7 +54,7 @@ export class HomePage {
 
 
   ngOnInit() {
-    let timer = TimerObservable.create(1000, 2000);
+    let timer = TimerObservable.create(10000, 20000);
     this.subscription = timer.subscribe(t => {
       this.takePicture()
     });
