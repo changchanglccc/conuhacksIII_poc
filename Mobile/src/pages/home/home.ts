@@ -103,21 +103,9 @@ export class HomePage {
   }
 
   private takePreviewPicture(detectorService, win: (r) => any, fail: (error) => any) {
-      this.platform.ready().then(() => {
-        const option: CameraPreviewPictureOptions = {width:640, height:1280, quality: 50};
-        this.cameraPreview.setFlashMode("off");
-        this.cameraPreview.takePicture(function (imgData) {
-          console.log('HomePage takePicture');
-          const bytes: string = atob(imgData);
-          const byteNumbers = new Array(bytes.length);
-          for (let i = 0; i < bytes.length; i++) {
-            byteNumbers[i] = bytes.charCodeAt(i);
-          }
-          const byteArray = new Uint8Array(byteNumbers);
-
-          const blob: Blob = new Blob([byteArray], { type: 'image/png' });
-          detectorService.detector(blob, win, fail, this.navParams.get("email"), this.device.uuid);
-        });
+    this.platform.ready().then(() => {
+      const option: CameraPreviewPictureOptions = {width:640, height:1280, quality: 50};
+      this.cameraPreview.setFlashMode("off");
 
         if (this.platform.is('ios')) {
           this.cameraPreview.takePicture(option).then((imgData) => {
@@ -143,10 +131,10 @@ export class HomePage {
             }
             const byteArray = new Uint8Array(byteNumbers);
 
-            const blob: Blob = new Blob([byteArray], {type: 'image/jpeg'});
-            detectorService.detector(blob, win, fail);
-          });
-        }
+          const blob: Blob = new Blob([byteArray], {type: 'image/jpeg'});
+          detectorService.detector(blob, win, fail, this.navParams.get("email"), this.device.uuid);
+        });
+      }
 
       });
     }

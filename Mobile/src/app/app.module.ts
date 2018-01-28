@@ -10,9 +10,11 @@ import { File } from '@ionic-native/file';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { DetectorService } from "../services/rest/detectorService";
+import { DetectorService } from "../services/rest/DetectorService";
 import { NotificationService } from "../services/device/NotificationService";
 import { Device } from '@ionic-native/device';
+
+
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { Device } from '@ionic-native/device';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage
   ],
   providers: [
     File,
