@@ -1,0 +1,79 @@
+.admin-dashboard {
+    background: #ECAD00;
+    font-family: 'Times New Roman', 'New Century Schoolbook', 'Helvetica Neue', Georgia, Arial, sans-serif;
+}
+
+
+.admin-dashboard .frame-wrapper {
+    background: #003956;
+    border: 1px solid #2f4f4f;
+    margin-bottom: 10px;
+    height:auto;
+}
+
+.admin-dashboard .frame-wrapper .frame-title {
+    border-bottom: 1px solid #fffaf0;
+    color: #F8F8FF;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 5px 10px 5px;
+}
+
+.admin-dashboard .frame-wrapper .frame-stage {
+    overflow: hidden;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.admin-dashboard .frame-wrapper .frame-notes {
+    background: #003956;
+    border-top: 1px solid #e2e2e2;
+    height: 50px;
+    color: #F8F8FF;
+    font-size: 18px;
+    padding: 5px 10px 5px;
+}
+
+.admin-dashboard .frame-wrapper .dropdown {
+    background: #fbfbfb;
+    /*border-left: 1px solid #e2e2e2;*/
+    height: 40px;
+    color: #F8F8FF;
+    font-size: 18px;
+    padding: 5px 10px 5px;
+    display: inline;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    overflow: inherit;
+
+}
+
+.admin-dashboard .frame-wrapper .dropdown .dropdown-menu .dropdown-item{
+    background: #fbfbfb;
+    border-top: 1px solid #e2e2e2;
+    height: 50px;
+    color: #F8F8FF;
+    font-size: 18px;
+    padding: 5px 10px 5px;
+}
+
+.admin-dashboard .frame-wrapper .switch-toggle {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.admin-dashboard .frame-wrapper .dataviz,
+.admin-dashboard .frame-wrapper .dataviz-title,
+.admin-dashboard .frame-stage .frame-title {
+    border: medium none;
+}
+
+
+.detector-list{
+    margin: auto;
+    width: 50%;
+    display: block;
+    text-align: center;
+}
