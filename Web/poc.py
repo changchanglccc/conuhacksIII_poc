@@ -206,7 +206,7 @@ def list_all_cameras(user_id):
 def hello():
     if 'credentials' not in flask.session:
         return flask.redirect('authorize')
-    return redirect('http://localhost:5000/index.html', code=302)
+    return redirect('http://ec2-18-217-218-155.us-east-2.compute.amazonaws.com/index.html', code=302)
 
 
 @app.route('/<path:path>')
@@ -536,5 +536,5 @@ def print_index_table():
 #############################
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, threaded=True)
+    app.run(host='0.0.0.0', port=80, threaded=True)
 # # host='0.0.0.0', port='80',
