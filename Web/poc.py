@@ -401,6 +401,20 @@ def detector():
         response.headers['Access-Control-Allow-Origin'] = '*'  # This is important for Mobile Device
         return response
 
+@app.route('/rest/api/check', methods=['POST'])
+def check():
+    user_id = flask.session['email_address']
+    camera_id = request.values['camera_id']
+    image_path = get_image(user_id, camera_id)
+    # if os.path.isfile(image_path):
+    #     return image_path
+    # else:
+    #     image_path = 'static/monitor/' + user_id + '/' + camera_id + '/monitor.jpeg'
+    #     if os.path.isfile(image_path):
+    #         return image_path
+    # return 'Error: no image found.'
+    return image_path
+
 @app.route('/authorize')
 def authorize():
     # Create flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
