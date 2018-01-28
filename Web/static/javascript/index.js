@@ -4,7 +4,7 @@ function loadClassifier(id, parent) {
     // addElement ();
 
     var client = new sendRequest();
-    client.get('https://httpbin.org/post', function(response) {
+    client.get('http://ec2-18-217-218-155.us-east-2.compute.amazonaws.com/rest/api/detector', function(response) {
         var detData = JSON.parse(response).classifieres;
         var cont1 = document.createElement("div");
         cont1.className = "dropdown"
@@ -32,7 +32,7 @@ function loadClassifier(id, parent) {
 function loadFrames() {
     // addElement ();
     var client = new sendRequest();
-    client.get('https://httpbin.org/get', function(response) {
+    client.get('http://ec2-18-217-218-155.us-east-2.compute.amazonaws.com/rest/api/camera', function(response) {
         var camera = JSON.parse(response);
         for (index in camera){
             cameraid = camera[index];
@@ -99,7 +99,7 @@ function expandMenu(id, de, cont2){
 function setCamera(id, name) {
     var client = new sendRequest();
     var params = "camera_id="+id + "&classifier_name=" +name
-    client.post('https://httpbin.org/post', function(response) {
+    client.post('http://ec2-18-217-218-155.us-east-2.compute.amazonaws.com/rest/api/camera/setting', function(response) {
 
     }, params);
 }
@@ -141,7 +141,7 @@ function refreshFrame(src, id, div2) {
 
     var client = new sendRequest();
     var params = "camera_id="+id
-    client.post('https://httpbin.org/post', function(response) {
+    client.post('http://ec2-18-217-218-155.us-east-2.compute.amazonaws.com/rest/api/check', function(response) {
         if(!response.includes("Error")) {
             if(response.includes("alert")) {
                 //set alert
