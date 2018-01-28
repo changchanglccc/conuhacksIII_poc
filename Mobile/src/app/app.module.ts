@@ -11,8 +11,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { DetectorService } from "../services/rest/detectorService";
-import { DetectorService } from "../services/rest/DetectorService";
-import { NotificationService } from "../services/device/NotificationService"
+import { NotificationService } from "../services/device/NotificationService";
+import { Device } from '@ionic-native/device';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { NotificationService } from "../services/device/NotificationService"
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CameraPreview,
     DetectorService,
-    NotificationService
+    NotificationService,
+    Device
   ]
 })
 export class AppModule {}
