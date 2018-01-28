@@ -360,10 +360,8 @@ def detector():
         #     response.headers['Access-Control-Allow-Origin'] = '*'  # This is important for Mobile Device
         #     return response
         # keyword = get_keyword(detector_id)
-        detector_id = ''
-        fullname = ''
         # Classifying a picture from a file path
-        print(detector_id, fullname)
+        print(fullname)
         # classification_result = api.classify_image(detector_id=detector_id, image_file=fullname)
         # print(classification_result)
         #######################  Classifier
